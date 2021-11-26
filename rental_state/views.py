@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.http import JsonResponse
+from rest_framework import viewsets
+from rental_state.models import RentalStateProperty
+from rental_state.serializer import RentalStateSerializer
 
-def rental_state(request):
-    if request.method == 'GET':
-        rental_state = {'id':1, 'type': 'Apartment', 'footage': '100', 'unit': 'square meters'}
-        return JsonResponse(rental_state)
+
+class RentalStateViewSet(viewsets.ModelViewSet):
+    """Showing all the properties in the database"""
+    queryset = RentalStateProperty.objects.all()
+    serializer_class = RentalStateSerializer

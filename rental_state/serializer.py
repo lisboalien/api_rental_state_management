@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from rental_state.models import RentalState
+from rental_state.models import RentalStateProperty
 
 class RentalStateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = RentalState
+        model = RentalStateProperty
         fields = '__all__'

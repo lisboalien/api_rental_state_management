@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class RentalState(models.Model):
+class RentalStateProperty(models.Model):
     RENTAL_STATE_TYPE = (
         ('C', 'COMERCIAL'),
         ('R', 'RESIDENCIAL')

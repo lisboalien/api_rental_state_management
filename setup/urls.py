@@ -1,8 +1,12 @@
 from django.contrib import admin
-from django.urls import path
-from rental_state.views import rental_state
+from django.urls import path, include
+from rental_state.views import RentalStateViewSet
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('rental_state', RentalStateViewSet, basename='RentalState')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('rental_state/', rental_state),
+    path('', include(router.urls)),
 ]
